@@ -1,0 +1,8 @@
+filename = "DowntoEarth-travel-2014-03-22T13-38-26"
+description = ""
+datestamp = "1395495510"
+generator = "Backup and Migrate (http://drupal.org/project/backup_migrate)"
+generatorversion = "7.x-2.x"
+sites[0][version] = "7.26"
+sites[0][name] = "Down to Earth-travel"
+sites[0][url] = "http://kara.digitalredizm.com/"

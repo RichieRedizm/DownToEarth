@@ -1,0 +1,33 @@
+<?php
+
+/*
+ * custom module built by richieredizm@gmail.com 
+ */
+
+// Update some component's value with flagged items before it is saved.
+function custom_webform_flag_webform_submission_presave($node, &$submission) {
+  global $base_url;
+  $mini_tours = '';
+  // get the selected flags for the mini tour breaks
+  $flag_items = flag_get_user_flags('node', $entity_id = NULL, $uid = NULL, $sid = NULL, $reset = FALSE);
+  if (isset($flag_items['select_mini_tours'])) {
+  	  $numflags = 0; 
+	  foreach ($flag_items['select_mini_tours'] as $flagId => $flag_item) {
+	  	// echo $flagId;
+	  	$numflags++;
+	  	$fargs = array(
+		  ':fid' => $flagId
+		);
+		  $flag_sql = 'SELECT title FROM {node} WHERE nid = :fid';
+		  $flag_title = db_query($flag_sql, $fargs)->fetchField();
+		  
+		  $mini_tours .= t($numflags . ') Tour Name: ' . $flag_title . ', Tour Page: ' . $base_url . '/node/'. $flagId . '  -  ');
+		  
+	  }
+   }
+ 
+   $component_id = 13;
+   $submission->data[$component_id]['value'][0] = $mini_tours;
+}
+
+

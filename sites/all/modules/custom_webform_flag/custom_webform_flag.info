@@ -1,0 +1,12 @@
+name = custom webform flag
+description = populate webform using flags.
+files[] = custom_webform_flag.module
+dependencies[] = flag
+dependencies[] = webform
+
+; Information added by richieredizm@gmail.com 
+version = "7.x-1.0"
+core = "7.x"
+project = "custom webform flag"
+
+
