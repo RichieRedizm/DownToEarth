@@ -215,9 +215,9 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'digitalr_2013_kara',
-      'username' => 'digitalr_kara',
-      'password' => 'izm1-kara',
+      'database' => 'd1gitafr_2014_kara',
+      'username' => 'd1gitafr_kara',
+      'password' => 'scdd4-kara',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
